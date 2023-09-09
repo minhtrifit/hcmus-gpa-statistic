@@ -230,9 +230,9 @@ const GpaDisplay = () => {
   return (
     <>
       <Modal
-        title="Kết quả của bạn:"
+        title="Kết quả học tập:"
         style={{ top: 20, minHeight: 100 }}
-        width={800}
+        width={600}
         open={modal1Open}
         onOk={() => setModal1Open(false)}
         onCancel={() => setModal1Open(false)}
@@ -250,10 +250,7 @@ const GpaDisplay = () => {
         <p>GPA: {gpaResult}</p>
         <p>Số tín chỉ: {gpaSum}</p>
       </Modal>
-      <div className="px-10 mt-10 flex justify-center">
-        <p>PHẦN MỀM TÍNH GPA - HCMUS</p>
-      </div>
-      <div className="px-10">
+      <div>
         <div className="my-10">
           {gpaData !== undefined && gpaData?.length > 0 && (
             <div className="w-[400px] flex gap-4">
@@ -264,11 +261,10 @@ const GpaDisplay = () => {
                 }}
                 size="large"
                 type="primary"
-                danger
               >
                 Tính toán GPA
               </Button>
-              <Button onClick={handleSubmit} size="large" type="primary">
+              <Button onClick={handleSubmit} size="large" type="primary" danger>
                 Xuất kết quả
               </Button>
             </div>
@@ -292,7 +288,7 @@ const GpaDisplay = () => {
         <div className="mx-auto my-10">
           {gpaData !== undefined && gpaData?.length > 0 && (
             <div className="flex flex-col gap-4 w-[400px]">
-              <p className="text-blue-500 font-bold">Bộ lọc học phần:</p>
+              <p className="text-blue-700 font-bold">Bộ lọc học phần:</p>
               <Checkbox onChange={filterDublicate}>
                 Lọc các môn học lại/ cải thiện
               </Checkbox>
