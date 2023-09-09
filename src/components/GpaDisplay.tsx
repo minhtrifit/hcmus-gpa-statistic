@@ -175,7 +175,7 @@ const GpaDisplay = () => {
 
     if (gpaData !== undefined) {
       for (var i = 0; i < gpaData?.length; ++i) {
-        if (gpaData[i]?.point) {
+        if (gpaData[i]?.point && gpaData[i]?.point !== "Vắng") {
           console.log(gpaData[i]);
           pointGpa += gpaData[i]?.credits * gpaData[i]?.point;
           sumGpa += gpaData[i]?.credits;
